@@ -1,0 +1,29 @@
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+[user]
+        name = Peter C
+        email = petexc@users.noreply.github.com
+        signingkey = 5498753FE40472CD
+[commit]
+        gpgsign = true
+[gpg]
+        program = gpg
+[tag]
+        gpgsign=true
+[url "ssh://git@github.com/"]
+        insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+        insteadOf = https://gitlab.com/
+[url "ssh://git@bitbucket.org/"]
+        insteadOf = https://bitbucket.org/
+[core]
+        editor = vim
+[fetch]
+        prune = true
+[pull]
+        rebase = true
+[rebase]
+        autoStash = true

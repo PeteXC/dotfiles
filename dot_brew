@@ -1,0 +1,106 @@
+tap "adoptopenjdk/openjdk"
+tap "hashicorp/tap"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "joerdav/xc"
+tap "remotemobprogramming/brew"
+tap "romkatv/powerlevel10k"
+tap "teamookla/speedtest"
+tap "warrensbox/tap"
+# Securely store and access AWS credentials in development environments
+brew "aws-vault"
+# Library for command-line editing
+brew "readline"
+# Command-line interface for SQLite
+brew "sqlite"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Simple command-line tool to read AWS CloudWatch logs
+brew "awslogs"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Console Matrix
+brew "cmatrix"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Isolated development environments using Docker
+brew "docker-compose"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Render markdown on the CLI
+brew "glow"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Fast linters runner for Go
+brew "golangci-lint"
+# GNU grep, egrep and fgrep
+brew "grep"
+# Improved top (interactive process viewer)
+brew "htop"
+# Configurable static site generator
+brew "hugo"
+# Remote terminal application
+brew "mosh"
+# Free (GNU) replacement for the Pico text editor
+brew "nano"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Platform built on V8 to build network applications
+brew "node"
+# Development kit for the Java programming language
+brew "openjdk"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Pretty, minimal and fast ZSH prompt
+brew "pure"
+# Python version management
+brew "pyenv"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Tool to build, change, and version infrastructure
+brew "terraform", link: false
+# Terraform version manager inspired by rbenv
+brew "tfenv"
+# Internet file retriever
+brew "wget"
+# JavaScript package manager
+brew "yarn"
+# General-purpose lossless data-compression library
+brew "zlib"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Vault
+brew "hashicorp/tap/vault"
+# Swift handover for remote mobs using git. mob is a CLI tool written in GO. It keeps your master branch clean and creates WIP commits on mob-session branch.
+brew "remotemobprogramming/brew/mob"
+# A Zsh Theme
+brew "romkatv/powerlevel10k/powerlevel10k"
+# Ookla Speedtest
+brew "teamookla/speedtest/speedtest"
+# Open-source Markdown editor
+cask "macdown"
+# Simple and elegant markdown editor
+cask "mark-text"
