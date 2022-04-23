@@ -37,7 +37,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -52,7 +52,7 @@ ENABLE_CORRECTION="true"
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-COMPLETION_WAITING_DOTS="true"
+ #COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -79,6 +79,9 @@ COMPLETION_WAITING_DOTS="true"
 # ZSH Autosuggest stuff...
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#585858"
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+bindkey '^ ' autosuggest-accept
 
 plugins=(
     git
@@ -122,8 +125,7 @@ fi
 
 alias nano="/opt/homebrew/Cellar/nano/6.2/bin/nano"
 alias zshconfig="nano ~/.zshrc"
-alias ohmyzsh="nano ~/.oh-my-zsh"
-alias srczsh="source ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
 alias gogo="go get ./... && go mod tidy && go test ./... --cover"
 alias ez="exec zsh"
 
@@ -132,35 +134,37 @@ alias co="code -a"
 # Go somewhere
 alias gohome="cd ~"
 alias godot="chezmoi cd"
-alias gowork='cd ~/Repos/Aviva'
+alias gowork="cd $HOME/Repos/Aviva"
+alias gotools="cd $HOME/.local/share/bin"
 
 # Pkg manager stuff
 alias bu="brew update && brew upgrade"
 
-# Github
-alias orefresh="~/Repos/IW/Scripts/clone_all.sh"
-
+# Shorten normal commands
+alias awe="awesome"
 
 # Sort this later
 export TFENV_ARCH=arm64
 source ~/.snow.env
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Set environment variables
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="$HOME/.gem/ruby/3.1.1/bin:$PATH"
-
+export PATH="$HOME/.local/share/bin:$PATH"
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# Important Locations
+export WORK="$HOME/Repos/Aviva"
+export TOOLS="$HOME/.local/share/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias switch-testing='unset AWS_VAULT && aws-vault exec aviva-testing --duration 12h'
+# Magic - Do Not Touch
 export GPG_TTY=$(tty)
-
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+eval "$(pyenv init -)"

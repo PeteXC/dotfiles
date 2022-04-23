@@ -58,3 +58,36 @@ set hlsearch
 
 " Set the commands to save in history default number is 20.
 set history=1000
+
+" Set colorscheme
+"
+" Make background transparent
+hi Normal guibg=NONE ctermbg=NONE
+
+" PLUGINS ---------------------------------------------------------------- {{{
+
+call plug#begin('~/.vim/plugged')
+
+
+  Plug 'dense-analysis/ale'
+
+  Plug 'preservim/nerdtree'
+
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+
+  Plug 'ryanoasis/vim-devicons'
+  
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+
+  Plug 'morhetz/gruvbox'  
+  "Plug 'joshdick/one'
+  
+  
+  
+call plug#end()
+
+" }}}
