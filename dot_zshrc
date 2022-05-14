@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -123,7 +123,7 @@ fi
 
 # My aliases
 
-alias nano="/opt/homebrew/Cellar/nano/6.2/bin/nano"
+# alias nano="/opt/homebrew/Cellar/nano/6.2/bin/nano"
 alias zshconfig="nano ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias gogo="go get ./... && go mod tidy && go test ./... --cover"
@@ -136,6 +136,7 @@ alias gohome="cd ~"
 alias godot="chezmoi cd"
 alias gowork="cd $HOME/Repos/Aviva"
 alias gotools="cd $HOME/.local/share/bin"
+alias godevops="cd $HOME/Repos/AvivaDevOps"
 
 # Pkg manager stuff
 alias bu="brew update && brew upgrade"
@@ -168,3 +169,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 eval "$(pyenv init -)"
+export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+eval "$(mcfly init zsh)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
